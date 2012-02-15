@@ -6,6 +6,7 @@
          Version Control Systems. -->
      <property environment="env"/>
     <property name="sdk.dir" value="${env.ANDROID_HOME}"/>
+    <echo message="ANDROID_HOME = ${env.ANDROID_HOME}"/>
 
 
     <!-- The ant.properties file can be created by you. It is only edited by the
