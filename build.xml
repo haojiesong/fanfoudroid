@@ -93,7 +93,7 @@
     <taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpathref="findbugs_lib" />  
     <target name="findbugs" depends="-compile">  
         <mkdir dir="reports" />  
-        <findbugs home="${findbugs.home}" output="html" outputFile="reports/${ant.project.name}_findbugs.html">  
+        <findbugs home="${findbugs.home}" output="xml" outputFile="reports/findbugs.html">  
             <auxClasspath path="${android.jar}" />   
             <class location="${out.dir}" />  
             <sourcePath path="${source.dir}" />  
