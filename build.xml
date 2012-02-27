@@ -85,4 +85,18 @@
     <!-- version-tag: 1 -->
     <import file="${sdk.dir}/tools/ant/build.xml" />
 
+    <path id="findbugs_lib">  
+        <fileset dir="${findbugs.home}/lib/">  
+            <include name="*.jar"/>  
+        </fileset>  
+    </path>  
+    <taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpathref="findbugs_lib" />  
+    <target name="findbugs" depends="-compile">  
+        <mkdir dir="reports" />  
+        <findbugs home="${findbugs.home}" output="html" outputFile="reports/${ant.project.name}_findbugs.html">  
+            <auxClasspath path="${android.jar}" />   
+            <class location="${out.dir}" />  
+            <sourcePath path="${source.dir}" />  
+        </findbugs>  
+    </target>  
 </project>
